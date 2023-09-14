@@ -12,5 +12,6 @@ free -h    # 以人可读的方式显示，单位G
 
 在nvidia-smi发现GPU占用时，查找使用docker，通过PID寻找  
 cat /proc/\<process-pid\>/cgroup  # 将这里的pid替换成具体pid，注意去掉<> ,查找对应的contrainerId  
-docker inspect --format '{{.Name}}' "${containerId}" | sed 's/^\///'   # 根据contrainerId查找对应的docker名称，注意将${}也去掉  
+docker inspect --format '{{.Name}}' "${containerId}" | sed 's/^\///'   # 根据contrainerId查找对应的docker名称，注意将${}也去掉    
 
+nohup ./run.sh >output 2>&1 &  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;            # 指定输出到output文件，后台执行
