@@ -10,6 +10,8 @@ free  #显示服务器内存情况
 free -m    # 以M为单位显示  
 free -h    # 以人可读的方式显示，单位G  
 
+docker stats --no-stream    # 监控各个容器使用资源的情况，只输出当前状态  
+
 在nvidia-smi发现GPU占用时，查找使用docker，通过PID寻找  
 cat /proc/\<process-pid\>/cgroup  # 将这里的pid替换成具体pid，注意去掉<> ,查找对应的contrainerId  
 docker inspect --format '{{.Name}}' "${containerId}" | sed 's/^\///'   # 根据contrainerId查找对应的docker名称，注意将${}也去掉    
