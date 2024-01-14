@@ -16,4 +16,6 @@ docker stats --no-stream    # 监控各个容器使用资源的情况，只输�
 cat /proc/\<process-pid\>/cgroup  # 将这里的pid替换成具体pid，注意去掉<> ,查找对应的contrainerId  
 docker inspect --format '{{.Name}}' "${containerId}" | sed 's/^\///'   # 根据contrainerId查找对应的docker名称，注意将${}也去掉    
 
-nohup ./run.sh >output 2>&1 &  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;            # 指定输出到output文件，后台执行
+nohup ./run.sh >output 2>&1 &  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;            # 指定输出到output文件，后台执行    
+
+## 常见error
